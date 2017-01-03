@@ -1,0 +1,132 @@
+%LaTeX template for SMAST thesis
+%Created by Chang Liu
+%Some parts are modified based on the thesis template created by Gustavo Marques
+%Feb 2014
+\documentclass[12pt,letterpaper]{report}
+\usepackage[latin1]{inputenc}
+%\usepackage[left=1.5in, right=1.0in, top=1.0in, bottom=1.0in, includehead,includefoot,heightrounded]{geometry}
+\usepackage[left=1.5in, right=1.0in, top=1.0in, bottom=1.0in, heightrounded]{geometry}
+\usepackage{amsmath,mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{gensymb} % for displaying degree celsius
+\usepackage{siunitx}
+\usepackage{tabularx}
+
+
+
+
+
+\usepackage{natbib}
+
+\usepackage[labelfont=bf]{caption}
+\usepackage{hyperref}
+%================== Draft. 
+%clickable and colored links for references \hypersetup{citecolor=blue,colorlinks=true,linkcolor=blue,backref=true}
+%==================
+\usepackage[doublespacing]{setspace}
+\setstretch{2.0}
+
+
+\usepackage{multirow}
+% make sure figures do not appear before their text:    
+\usepackage{flafter}  
+
+
+\pagestyle{headings}
+% Times Roman font, comment for default Computer Modern font
+\usepackage{times} 
+
+\usepackage{cases}
+
+
+% reduce line-end hyphenation
+\hyphenpenalty=2000
+\tolerance=800
+
+% deal with paragraphs with single lines at the end of a page
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty = 10000
+\raggedbottom
+
+%Title format
+\usepackage{titlesec}
+\titleformat{\chapter}{\large\bfseries\scshape}{Chapter\space \thechapter}{1em}{}
+\titleformat*{\section}{\normalsize\bfseries\scshape}
+\titleformat*{\subsection}{\normalsize\normalfont\scshape}
+\titlespacing*{\chapter}{0pt}{20pt}{50pt}
+\titlespacing*{\section}{0pt}{15pt}{10pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+
+
+\renewcommand\bibname{References}
+\newcommand{\mytitle}{The Ocean Around Us}
+
+\title{\mytitle}
+\author{May B. Credible}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%
+% Front matter
+%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}
+\pagenumbering{roman} 
+
+%Title page
+\input{Title}
+%Signature page
+\input{Relform}
+
+
+
+\setcounter{page}{3}
+\chapter*{Abstract}
+\mytitle \\
+
+\noindent
+by [Author's full name] \\
+
+
+\noindent
+Abstract text...
+
+
+\chapter*{Acknowledgments}
+Acknowledgments text...
+
+
+%TOC
+\tableofcontents
+\pagebreak
+\addcontentsline{toc}{chapter}{List of Figures}\listoffigures 
+\pagebreak
+\addcontentsline{toc}{chapter}{List of Tables}\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Main body
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{myheadings}
+% Input chapters
+\input{ch1.tex}
+\input{ch2.tex}
+%\input{ch3.tex}
+%\input{ch4.tex}
+%\input{ch5.tex}
+%\input{ch6.tex}
+
+
+
+
+
+
+\pagebreak
+\addcontentsline{toc}{chapter}{References} 
+\bibliographystyle{apa} 
+\bibliography{bibfile}
+
+
+
+ \end{document}
